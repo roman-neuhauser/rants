@@ -1,0 +1,61 @@
+body {
+  font-size: smaller;
+  max-width: 45em;
+  margin: auto;
+  padding: 0;
+}
+
+body div.document {
+  padding: 2em;
+}
+
+body div.document h1.title {
+  border-bottom: 1px solid #aaa;
+}
+
+body div.document h1.title,
+body div.document p.subtitle {
+  text-align: center;
+  font-weight: bold;
+}
+
+body div.document h1.title {
+  font-size: x-large;
+}
+body div.document p.subtitle {
+  font-size: medium;
+  margin-bottom: 5em;
+}
+
+.simple > li,
+.simple > li p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+dl.footnote {
+  margin-top: 4em;
+  margin-left: 1ex;
+  padding-left: 1em;
+  border-left: solid;
+  border-left-width: thin;
+}
+
+dl.footnote > dt {
+  clear: left;
+  float: left;
+}
+
+blockquote {
+  font-style: italic;
+}
+
+.footnote-reference.brackets:before,
+span.brackets:before {
+  content: "[";
+}
+
+.footnote-reference.brackets:after,
+span.brackets:after {
+  content: "]";
+}
