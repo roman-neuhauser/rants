@@ -5,7 +5,8 @@
                                the what
 ----------------------------------------------------------------------
 
-Homebrew documentation on permissible software:
+
+`Homebrew documentation`__ on permissible software says:
 
   The software in question must:
 
@@ -15,9 +16,12 @@ Homebrew documentation on permissible software:
   - be used
   - have a homepage
 
-conflates *done* with *dead*; favors software requiring maintenance
-over that which *just works*.  there's two kinds: author's and
-user's maintenance.  both should be as low as possible: none.
+.. __: https://docs.brew.sh/Acceptable-Formulae
+
+i have issues with the first bullet: it conflates *done* with *dead*;
+favors software requiring maintenance over that which *just works*.
+there's two kinds: author's and user's maintenance.  both should be
+as low as possible: none.
 
 software needs either author's or user's maintenance if:
 
@@ -32,8 +36,8 @@ because it's complete and self-contained.  it builds [*]_ and runs
 today as well as it did 16 years ago (and counting).  it is used.
 i've been using it since 2002.  it does not fail, it does not change.
 
-Homebrew has it backwards, we should promote such software rather than
-shun it.  if releases represent improvements, then software which
+Homebrew has it backwards, we should celebrate such software rather
+than shun it.  if releases represent improvements, then software which
 "*is still making new releases*" is worse than that which has those
 releases in its past.
 
