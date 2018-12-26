@@ -528,3 +528,9 @@ Real solution?  Tell, Don't Ask!
 
   user.edit article
 
+
+Enough Is Enough
+================
+
+As I mentioned above, I didn't finish the book.
+The review ends here.
