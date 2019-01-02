@@ -59,3 +59,13 @@ span.brackets:before {
 span.brackets:after {
   content: "]";
 }
+
+span.literal {
+  font-family: monospace;
+  white-space: pre-wrap;
+}
+
+pre.literal-block {
+  margin-left: 1em;
+  margin-right: 1em;
+}

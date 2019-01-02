@@ -1,6 +1,8 @@
 rst2htmlcmd = rst2html5.py
 
-rants = durable.html
+rants =
+rants += durable.html
+rants += yaml.html
 
 .PHONY: all
 all: $(rants)
