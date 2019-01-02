@@ -8,11 +8,9 @@
                                 a review
 ========================================================================
 
-:Author: Roman Neuhauser
-:Contact: rneuhauser@suse.cz
-:Copyright: This document is in the public domain.
-
-.. contents:: :depth: 1
+.. contents::
+   :depth: 1
+   :backlinks: none
 
 The object of this mildly polemic review is a book called
 *Rails Antipatterns: Best Practice Ruby On Rails Refactoring*,
