@@ -3,6 +3,7 @@ rst2htmlcmd = rst2html5.py
 rants =
 rants += index.html
 rants += durable.html
+rants += rails-antipatterns.html
 rants += yaml.html
 
 .PHONY: all
