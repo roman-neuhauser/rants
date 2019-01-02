@@ -1,6 +1,7 @@
 rst2htmlcmd = rst2html5.py
 
 rants =
+rants += index.html
 rants += durable.html
 rants += yaml.html
 
