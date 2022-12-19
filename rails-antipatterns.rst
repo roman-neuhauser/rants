@@ -46,7 +46,7 @@ Voyeuristic Models / Law of Demeter
 The bad code
 ************
 
-::
+.. code:: ruby
 
   class Address < ActiveRecord::Base
     belongs_to :customer
@@ -61,6 +61,8 @@ The bad code
     has_many :invoices
   end
 
+.. code:: erb
+
   <%= @invoice.customer.name %>
   <%= @invoice.customer.address.street %>
   <%= @invoice.customer.address.city %>
@@ -70,7 +72,7 @@ The bad code
 Suggested improvement no. 1
 ***************************
 
-::
+.. code:: ruby
 
   class Customer < ActiveRecord::Base
     has_one :address
@@ -103,6 +105,8 @@ Suggested improvement no. 1
     end
   end
 
+.. code:: erb
+
   <%= @invoice.customer_name %>
   <%= @invoice.customer_street %>
   <%= @invoice.customer_city %>
@@ -111,7 +115,7 @@ Suggested improvement no. 1
 Suggested improvement no. 2
 ***************************
 
-::
+.. code:: ruby
 
   class Customer < ActiveRecord::Base
     has_one :address
@@ -127,6 +131,8 @@ Suggested improvement no. 2
     delegate :name, :street, :city,
       :to => :customer, :prefix => true
   end
+
+.. code:: erb
 
   <%= @invoice.customer_name %>
   <%= @invoice.customer_street %>
@@ -179,7 +185,7 @@ Recognition of this problem is one of the bases of OOP: objects put
 together data and code which acts on that data precisely to limit the
 data flow in the program.
 
-::
+.. code:: ruby
 
   class Invoice
     def paint_on display
@@ -244,7 +250,7 @@ Fat Models
 Bad code
 ********
 
-::
+.. code:: ruby
 
   class Order < ActiveRecord::Base
     def self.find_this...
@@ -276,7 +282,7 @@ Tight coupling
 Another piece of bad advice given by the authors (p. 17) is to hardcode
 a collaborator class into the `Order` class.
 
-::
+.. code:: ruby
 
   class Order < ActiveRecord::Base
     def converter
@@ -301,7 +307,9 @@ Crying All the Way to the Bank
 ******************************
 
 This is sold as part of the "better" code, lifted from the Rails
-documentation(!): ::
+documentation(!):
+
+.. code:: ruby
 
   class Money
     include Comparable
@@ -327,7 +335,9 @@ documentation(!): ::
   end
 
 Crying yet?  You should be, as I intend to take your hard earned Euros
-and turn them into Greek Drachmas: ::
+and turn them into Greek Drachmas:
+
+.. code:: ruby
 
   your_euros = Money.new 10**6, :euro
   your_euros.currency = :drachma
@@ -352,7 +362,9 @@ Authorization Astronaut
 This whole section is set up around a strawman, and the suggested
 solution has more downsides than upsides.
 
-The authors set off with ::
+The authors set off with
+
+.. code:: ruby
 
   class User < ActiveRecord::Base
     def has_role?(role_in_question)
@@ -405,7 +417,7 @@ Simplify with Simple Flags
 The first suggested solution is to shun `Role` completely and rely
 on boolean attributes in `User`:
 
-::
+.. code:: ruby
 
   class User < ActiveRecord::Base
   end
@@ -422,7 +434,7 @@ The authors have this to say:
   If you need to add just one or two roles, it's not unreasonable to add
   the additional Booleans to the `User` model.
 
-::
+.. code:: ruby
 
   class User < ActiveRecord::Base
     has_many :roles
@@ -484,11 +496,15 @@ is IMO worse than the "bad" one.
 
 Ooookaaay, and the suggested query methods are an improvement over that
 how exactly?
-If ::
+If
+
+.. code:: ruby
 
   user.has_role? 'admin'
 
-presents a problem for refactorings, then ::
+presents a problem for refactorings, then
+
+.. code:: ruby
 
   user.admin?
 
@@ -504,7 +520,9 @@ Client code is really interested in user's capabilities, which means
 Ok, but what does that mean in practice?
 Business rules evolve, and by the time the client approaches you with
 a request to change who can edit articles, you'll have a few hundred
-places in the application like this: ::
+places in the application like this:
+
+.. code:: ruby
 
   if user.admin? || user.editor? || article.author == user
     ...
@@ -515,7 +533,7 @@ places in the application like this: ::
 Real solution?  Tell, Don't Ask (Again)!
 ****************************************
 
-::
+.. code:: ruby
 
   class User
     def edit article
