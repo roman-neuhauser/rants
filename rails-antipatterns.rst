@@ -512,8 +512,8 @@ places in the application like this: ::
 
 "But we need to have a senior editor role as well!"
 
-Real solution?  Tell, Don't Ask!
-********************************
+Real solution?  Tell, Don't Ask (Again)!
+****************************************
 
 ::
 

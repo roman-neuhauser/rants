@@ -5,24 +5,32 @@ body {
   padding: 0;
 }
 
-body div.document {
+hr {
+  margin-top: 4em;
+  width: 4em;
+  height: 1px;
+  background-color: #aaa;
+  border: none;
+}
+
+body main {
   padding: 2em;
 }
 
-body div.document h1.title {
+main > h1.title {
   border-bottom: 1px solid #aaa;
 }
 
-body div.document h1.title,
-body div.document p.subtitle {
+main > h1.title,
+main > p.subtitle {
   text-align: center;
   font-weight: bold;
 }
 
-body div.document h1.title {
+main > h1.title {
   font-size: x-large;
 }
-body div.document p.subtitle {
+main > p.subtitle {
   font-size: medium;
   margin-bottom: 5em;
 }
@@ -33,31 +41,23 @@ body div.document p.subtitle {
   margin-bottom: 0;
 }
 
-dl.footnote {
+aside.footnote-list {
   margin-top: 4em;
   margin-left: 1ex;
   padding-left: 1em;
-  border-left: solid;
-  border-left-width: thin;
 }
 
-dl.footnote > dt {
-  clear: left;
+aside.footnote > span {
+  display: block;
   float: left;
+  clear: both;
+}
+aside.footnote > p {
+  margin-left: 2em;
 }
 
 blockquote {
   font-style: italic;
-}
-
-.footnote-reference.brackets:before,
-span.brackets:before {
-  content: "[";
-}
-
-.footnote-reference.brackets:after,
-span.brackets:after {
-  content: "]";
 }
 
 span.literal {
@@ -68,4 +68,20 @@ span.literal {
 pre.literal-block {
   margin-left: 1em;
   margin-right: 1em;
+}
+
+span.label {
+  display: block;
+}
+
+span.label > a {
+  text-decoration: none;
+}
+
+span.fn-bracket {
+  display: none;
+}
+
+dl.field-list.simple > dt {
+  float: left;
 }

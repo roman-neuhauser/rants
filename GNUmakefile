@@ -1,4 +1,11 @@
-rst2htmlcmd = rst2html5.py
+SITE           = rne.srht.site
+
+RST2HTMLFLAGS  = --stylesheet=rants.css
+RST2HTMLFLAGS += --link-stylesheet
+RST2HTMLFLAGS += --trim-footnote-reference-space
+RST2HTMLFLAGS += --footnote-backlinks
+RST2HTMLFLAGS += --footnote-references=superscript
+RST2HTMLFLAGS += --rfc-references
 
 rants =
 rants += index.html
@@ -13,5 +20,5 @@ all: $(rants)
 clean:
 	rm -f $(rants)
 
-%.html: %.rst rants.css
-	$(rst2htmlcmd) --stylesheet-path=rants.css --embed-stylesheet $< $@
+%.html: %.rst
+	rst2html5 --strict $(RST2HTMLFLAGS) $< $@

@@ -69,6 +69,7 @@ get better still. [*]_  it's time to be explicit:
 
 lofty goals.
 
+----
 
 .. [*] djbdns needed one update after its ultimate release in 2001:
     when SUSv2_ won over POSIX.1_ and `extern int errno` stopped
